@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+/* COLORS */
+
+/* PRIMARY */
+--main-background: hsl(233, 47%, 7%);
+--card-background: hsl(244, 38%, 16%);
+--accent: hsl(277, 64%, 61%);
+
+/* NEUTRAL */
+--main-heading-stats: hsl(0, 0%, 100%);
+--main-paragraph: hsla(0, 0%, 100%, 0.75);
+--stats-heading: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    background-color: black;
+    color: var(--main-paragraph);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    background-color: var(--main-background);
+    width: 375px;
+    height: 100vh;
+}
+
+.card {
+    width: 90%;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+.card-img {
+    border-radius: 10px 10px 0 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img::after {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 100%;
+    background-color: var(--accent);
+    opacity: 0.38;
+    top: 0;
+    left: 0;
+}
+
+.card-content {
+    background-color: var(--card-background);
+    border-radius: 0 0 10px 10px;
+}
+
+.card-header {
+    color: var(--main-heading-stats);
+    font-weight: 700;
+    padding: 1.5rem 1rem;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.card-text {
+    color: var(--main-paragraph);
+    padding: 0 3rem 2rem;
+}
+
+.stats {
+    padding-bottom: 3rem;
+}
+
+.stat-title {
+    color: var(--main-heading-stats);
+    font-weight: 700;
+    padding-bottom: .5rem;
+}
+
+.stat-subtitle {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+@media (min-width:1000px) {
+
+    .container {
+        width: 1280px;
+        border-radius: 10px;
+    }
+
+     .card {
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+
+    .card-img {
+        height: 100%;
+        width: 50%;
+        border-radius: 0 10px 10px 0;
+    }
+
+    .card-content {
+        width: 50%;
+        padding: 2.5rem 4rem 0 4rem;
+        margin-bottom: 0;
+    }
+
+    .card-header {
+        font-weight: 700;
+        font-size: 2.5rem;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .card-text {
+        text-align: left;
+        padding-left: 0;
+        margin-bottom: 2rem;
+    }
+
+    .stats-block {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+    }
+
+   .stats + .stats {
+    padding-left: 4rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+   }
+
+}
